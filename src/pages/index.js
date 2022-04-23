@@ -1,7 +1,6 @@
 import React from "react"
 import {
   createStyles,
-  Image,
   Container,
   Title,
   Button,
@@ -11,9 +10,8 @@ import {
   ThemeIcon,
 } from "@mantine/core"
 import { Check } from "tabler-icons-react"
-import logo from "../assets/the-muslims-dashboard-2.jpg"
 import Layout from "../components/Layout"
-import { StaticImage } from "gatsby-plugin-image"
+import HeroImg from "../components/HeroImg"
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -51,14 +49,6 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  image: {
-    flex: 1,
-
-    [theme.fn.smallerThan("md")]: {
-      display: "none",
-    },
-  },
-
   highlight: {
     position: "relative",
     backgroundColor:
@@ -72,6 +62,7 @@ const useStyles = createStyles((theme) => ({
 
 export default function Home() {
   const { classes } = useStyles()
+
   return (
     <Layout>
       <div>
@@ -126,14 +117,7 @@ export default function Home() {
                 </Button>
               </Group>
             </div>
-            {/* <Image src={logo} className={classes.image} alt="" /> */}
-            <StaticImage
-              src="../assets/the-muslims-dashboard-2.jpg"
-              placeholder="tracedSVG"
-              objectFit="contain"
-              alt=""
-              className={classes.image}
-            />
+            <HeroImg />
           </div>
         </Container>
       </div>

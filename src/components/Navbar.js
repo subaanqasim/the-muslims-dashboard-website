@@ -13,8 +13,6 @@ import {
   ActionIcon,
 } from "@mantine/core"
 import { useBooleanToggle } from "@mantine/hooks"
-import { MoonStars } from "tabler-icons-react"
-import { Link } from "gatsby"
 import Logo from "./Logo"
 
 const HEADER_HEIGHT = 60
