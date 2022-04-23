@@ -4,13 +4,10 @@ import {
   Header,
   Container,
   Group,
-  Burger,
   Paper,
   Transition,
   Button,
   useMantineColorScheme,
-  Text,
-  ActionIcon,
 } from "@mantine/core"
 import { useBooleanToggle } from "@mantine/hooks"
 import Logo from "./Logo"
