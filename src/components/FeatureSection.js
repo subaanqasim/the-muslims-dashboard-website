@@ -7,7 +7,6 @@ import {
   SimpleGrid,
   useMantineTheme,
   createStyles,
-  Kbd,
 } from "@mantine/core"
 
 import { MoonStars } from "tabler-icons-react"
@@ -67,7 +66,7 @@ export default function FeaturesGrid() {
   // ))
 
   return (
-    <Container className={classes.wrapper}>
+    <Container id="features" className={classes.wrapper}>
       <Title className={classes.title}>Everything you need in a new tab</Title>
 
       <Container size={560} p={0}>

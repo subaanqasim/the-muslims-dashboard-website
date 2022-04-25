@@ -3,7 +3,7 @@ import React from "react"
 import { MoonStars } from "tabler-icons-react"
 
 const Logo = () => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
+  const { toggleColorScheme } = useMantineColorScheme()
 
   return (
     <ActionIcon

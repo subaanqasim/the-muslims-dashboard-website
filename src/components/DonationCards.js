@@ -1,13 +1,5 @@
 import React from "react"
-import {
-  Avatar,
-  Text,
-  Button,
-  Paper,
-  createStyles,
-  Center,
-  Group,
-} from "@mantine/core"
+import { Text, Button, Paper, createStyles, Group } from "@mantine/core"
 import { CircleCheck } from "tabler-icons-react"
 
 const useStyles = createStyles((theme) => ({

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import {
   createStyles,
   Header,
@@ -7,12 +7,9 @@ import {
   Paper,
   Transition,
   Button,
-  Modal,
-  Text,
 } from "@mantine/core"
 import { useBooleanToggle } from "@mantine/hooks"
 import Logo from "./Logo"
-import DonationCards from "./DonationCards"
 
 const HEADER_HEIGHT = 60
 
@@ -97,7 +94,6 @@ const useStyles = createStyles((theme) => ({
 
 export default function Navbar({ links }) {
   const [opened, toggleOpened] = useBooleanToggle(false)
-  const [modalOpen, setModalOpen] = useState(false)
   const { classes, cx } = useStyles()
 
   return (
@@ -114,7 +110,7 @@ export default function Navbar({ links }) {
                     onClick={() => toggleOpened()}
                     className={classes.burger}
                     size="sm"
-                /> */}
+                />
 
           <Transition
             transition="pop-top-right"
@@ -123,27 +119,16 @@ export default function Navbar({ links }) {
           >
             {(styles) => (
               <Paper className={classes.dropdown} withBorder style={styles}>
-                {/* {items} */}
+                {items}
               </Paper>
             )}
-          </Transition>
-          <Button radius="sm" onClick={() => setModalOpen(true)}>
+          </Transition> */}
+
+          <Button radius="sm" component="a" href="/#features" title="Features">
             Become a supporter
           </Button>
         </Container>
       </Header>
-
-      <Modal
-        withCloseButton={false}
-        size="80%"
-        centered
-        opened={modalOpen}
-        onClose={() => setModalOpen(false)}
-      >
-        <Group position="center">
-          <DonationCards />
-        </Group>
-      </Modal>
     </>
   )
 }
