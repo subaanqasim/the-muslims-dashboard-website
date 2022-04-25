@@ -109,6 +109,10 @@ const HeroSection = () => {
                 radius="xl"
                 size="md"
                 className={classes.control}
+                component="a"
+                href="https://github.com/subaanqasim/the-muslims-dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Source code
               </Button>
