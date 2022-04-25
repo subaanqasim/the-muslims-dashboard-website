@@ -7,10 +7,12 @@ import {
   Paper,
   Transition,
   Button,
-  useMantineColorScheme,
+  Modal,
+  Text,
 } from "@mantine/core"
 import { useBooleanToggle } from "@mantine/hooks"
 import Logo from "./Logo"
+import DonationCards from "./DonationCards"
 
 const HEADER_HEIGHT = 60
 
@@ -95,50 +97,53 @@ const useStyles = createStyles((theme) => ({
 
 export default function Navbar({ links }) {
   const [opened, toggleOpened] = useBooleanToggle(false)
-  const [active, setActive] = useState(links[0].link)
+  const [modalOpen, setModalOpen] = useState(false)
   const { classes, cx } = useStyles()
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
-
-  // const items = links.map((link) => (
-  //     <Link
-  //         key={link.label}
-  //         to={link.link}
-  //         className={cx(classes.link, {
-  //             [classes.linkActive]: active === link.link,
-  //         })}
-  //         onClick={() => {
-  //             setActive(link.link)
-  //             toggleOpened(false)
-  //         }}
-  //     >
-  //         {link.label}
-  //     </Link>
-  // ))
 
   return (
-    <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
-      <Container className={classes.header}>
-        <Logo />
-        <Group spacing={5} className={classes.links}>
-          {/* {items} */}
-        </Group>
+    <>
+      <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
+        <Container className={classes.header}>
+          <Logo />
+          <Group spacing={5} className={classes.links}>
+            {/* {items} */}
+          </Group>
 
-        {/* <Burger
+          {/* <Burger
                     opened={opened}
                     onClick={() => toggleOpened()}
                     className={classes.burger}
                     size="sm"
                 /> */}
 
-        <Transition transition="pop-top-right" duration={200} mounted={opened}>
-          {(styles) => (
-            <Paper className={classes.dropdown} withBorder style={styles}>
-              {/* {items} */}
-            </Paper>
-          )}
-        </Transition>
-        <Button radius="sm">Become a supporter</Button>
-      </Container>
-    </Header>
+          <Transition
+            transition="pop-top-right"
+            duration={200}
+            mounted={opened}
+          >
+            {(styles) => (
+              <Paper className={classes.dropdown} withBorder style={styles}>
+                {/* {items} */}
+              </Paper>
+            )}
+          </Transition>
+          <Button radius="sm" onClick={() => setModalOpen(true)}>
+            Become a supporter
+          </Button>
+        </Container>
+      </Header>
+
+      <Modal
+        withCloseButton={false}
+        size="80%"
+        centered
+        opened={modalOpen}
+        onClose={() => setModalOpen(false)}
+      >
+        <Group position="center">
+          <DonationCards />
+        </Group>
+      </Modal>
+    </>
   )
 }
