@@ -27,6 +27,8 @@
     "gatsby-transformer-sharp": "^4.12.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-markdown": "^8.0.3",
+    "remark-gfm": "^3.0.1",
     "tabler-icons-react": "^1.45.0"
   },
   "devDependencies": {
