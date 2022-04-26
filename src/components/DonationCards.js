@@ -18,7 +18,7 @@ const optionsData = [
     price: "£2",
     timing: "/month",
     features: ["Support the core running costs", "Cancel anytime"],
-    buttonText: "Choose Essential",
+    buttonText: "Coming Soon",
   },
   {
     name: "Pillar",
@@ -30,7 +30,7 @@ const optionsData = [
       "Test new features currently in development",
       "Cancel anytime",
     ],
-    buttonText: "Choose Pillar",
+    buttonText: "Coming soon",
   },
   {
     name: "Custom",
@@ -78,7 +78,7 @@ export default function DonationCards() {
           {option.timing}
         </Text>
 
-        <Button variant="default" fullWidth mt="xl">
+        <Button variant="outline" fullWidth mt="xl">
           {option.buttonText}
         </Button>
       </Paper>
