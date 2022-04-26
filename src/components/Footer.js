@@ -1,7 +1,15 @@
 import React from "react"
-import { createStyles, Text, Container, ActionIcon, Group } from "@mantine/core"
+import {
+  createStyles,
+  Text,
+  Container,
+  ActionIcon,
+  Group,
+  Anchor,
+} from "@mantine/core"
 import { BrandTwitter, BrandInstagram } from "tabler-icons-react"
 import Logo from "./Logo"
+import { Link } from "gatsby"
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -73,11 +81,25 @@ const useStyles = createStyles((theme) => ({
       textDecoration: "underline",
     },
   },
+  footerLink: {
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[1]
+        : theme.colors.gray[6],
+    fontSize: theme.fontSizes.sm,
+    paddingTop: 3,
+    paddingBottom: 3,
+    cursor: "pointer",
+
+    "&:hover": {
+      textDecoration: "underline",
+    },
+  },
 
   title: {
     fontSize: theme.fontSizes.lg,
     fontWeight: 700,
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontFamily: theme.fontFamily,
     marginBottom: theme.spacing.xs / 2,
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
   },
@@ -153,9 +175,12 @@ export default function Footer({ data }) {
           © 2022 The Muslim's Dashboard. All rights reserved.
         </Text>
         <Group>
-          <Text color="dimmed" size="sm">
-            Created & maintained by Subaan Qasim.
-          </Text>
+          <Link className={classes.footerLink} to="/privacypolicy">
+            Privacy Policy
+          </Link>
+          <Anchor color="dimmed" size="sm" href="mailto:subaan.qasim@gmail.com">
+            Contact
+          </Anchor>
         </Group>
       </Container>
     </footer>

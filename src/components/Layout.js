@@ -15,21 +15,6 @@ const Layout = ({ children }) => {
 
   useHotkeys([["mod+J", () => toggleColorScheme()]])
 
-  const navLinks = [
-    {
-      link: "/",
-      label: "Home",
-    },
-    {
-      link: "/success",
-      label: "Success",
-    },
-    {
-      link: "/error",
-      label: "Error",
-    },
-  ]
-
   const myTheme = {
     colorScheme,
     primaryColor: "cyan",
@@ -50,7 +35,7 @@ const Layout = ({ children }) => {
         toggleColorScheme={toggleColorScheme}
       >
         <MantineProvider theme={myTheme} withNormalizeCSS withGlobalStyles>
-          <Navbar links={navLinks} />
+          <Navbar />
           {children}
           <Footer />
         </MantineProvider>

@@ -7,9 +7,11 @@ import {
   Paper,
   Transition,
   Button,
+  Burger,
 } from "@mantine/core"
 import { useBooleanToggle } from "@mantine/hooks"
 import Logo from "./Logo"
+import { Link } from "gatsby"
 
 const HEADER_HEIGHT = 60
 
@@ -92,25 +94,56 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-export default function Navbar({ links }) {
+const navLinks = [
+  // {
+  //   link: "/",
+  //   label: "Home",
+  // },
+  // {
+  //   link: "/success",
+  //   label: "Success",
+  // },
+  // {
+  //   link: "/error",
+  //   label: "Error",
+  // },
+]
+
+export default function Navbar() {
   const [opened, toggleOpened] = useBooleanToggle(false)
-  const { classes, cx } = useStyles()
+  const { classes } = useStyles()
+
+  const items = navLinks.map((link) => (
+    <Link
+      key={link.label}
+      to={link.link}
+      className={classes.link}
+      activeClassName={classes.linkActive}
+      onClick={() => {
+        toggleOpened(false)
+      }}
+    >
+      {link.label}
+    </Link>
+  ))
 
   return (
     <>
       <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
         <Container className={classes.header}>
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
           <Group spacing={5} className={classes.links}>
-            {/* {items} */}
+            {items}
           </Group>
 
-          {/* <Burger
-                    opened={opened}
-                    onClick={() => toggleOpened()}
-                    className={classes.burger}
-                    size="sm"
-                />
+          <Burger
+            opened={opened}
+            onClick={() => toggleOpened()}
+            className={classes.burger}
+            size="sm"
+          />
 
           <Transition
             transition="pop-top-right"
@@ -122,7 +155,7 @@ export default function Navbar({ links }) {
                 {items}
               </Paper>
             )}
-          </Transition> */}
+          </Transition>
 
           <Button radius="sm" component="a" href="/#features" title="Features">
             Become a supporter
