@@ -12,6 +12,8 @@ import {
 import { useBooleanToggle } from "@mantine/hooks"
 import Logo from "./Logo"
 import { Link } from "gatsby"
+import { MoonStars } from "tabler-icons-react"
+import ColourSchemeToggle from "./ColourSchemeToggle"
 
 const HEADER_HEIGHT = 60
 
@@ -136,6 +138,7 @@ export default function Navbar() {
           </Link>
           <Group spacing={5} className={classes.links}>
             {items}
+            <ColourSchemeToggle />
           </Group>
 
           <Burger

@@ -154,7 +154,9 @@ export default function Footer({ data }) {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
           <Text size="xs" color="dimmed" className={classes.description}>
             Everything a Muslim needs at a glance.
           </Text>

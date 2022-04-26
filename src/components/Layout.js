@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
-import { useHotkeys } from "@mantine/hooks"
+import { useHotkeys, useLocalStorage } from "@mantine/hooks"
 import { MantineProvider, ColorSchemeProvider } from "@mantine/core"
 import "@fontsource/inter/400.css"
 import "@fontsource/inter/600.css"
@@ -9,7 +9,14 @@ import "@fontsource/inter/700.css"
 import "@fontsource/inter/900.css"
 
 const Layout = ({ children }) => {
-  const [colorScheme, setColorScheme] = useState("light")
+  // const [colorScheme, setColorScheme] = useState("light")
+
+  const [colorScheme, setColorScheme] = useLocalStorage({
+    key: "tmd-color-scheme",
+    defaultValue: "light",
+    getInitialValueInEffect: true,
+  })
+
   const toggleColorScheme = (value) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"))
 
