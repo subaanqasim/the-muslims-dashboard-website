@@ -12,7 +12,6 @@ import {
 import { useBooleanToggle } from "@mantine/hooks"
 import Logo from "./Logo"
 import { Link } from "gatsby"
-import { MoonStars } from "tabler-icons-react"
 import ColourSchemeToggle from "./ColourSchemeToggle"
 
 const HEADER_HEIGHT = 60
@@ -160,7 +159,7 @@ export default function Navbar() {
             )}
           </Transition>
 
-          <Button radius="sm" component="a" href="/#features" title="Features">
+          <Button radius="sm" component="a" href="/#donation" title="Donation">
             Become a supporter
           </Button>
         </Container>

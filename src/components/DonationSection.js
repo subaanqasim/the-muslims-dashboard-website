@@ -32,7 +32,7 @@ export default function DonationSection() {
   const { classes } = useStyles()
 
   return (
-    <Container className={classes.wrapper}>
+    <Container id="donation" className={classes.wrapper}>
       <Title className={classes.title}>Become a supporter</Title>
 
       <Container size={560} p={0} mb="xl">
