@@ -18,5 +18,17 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `The Muslim's Dashboard`,
+        short_name: `The Muslim's Dashboard`,
+        start_url: `/`,
+        background_color: `#1a1b1e`,
+        theme_color: `#15aabf`,
+        display: `standalone`,
+        icon: `./src/assets/images/logos/tmd128.png`,
+      },
+    },
   ],
 }
