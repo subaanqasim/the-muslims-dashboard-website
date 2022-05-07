@@ -27,7 +27,7 @@ module.exports = {
         background_color: `#1a1b1e`,
         theme_color: `#15aabf`,
         display: `standalone`,
-        icon: `./src/assets/images/logos/tmd128.png`,
+        icon: `./src/assets/logos/tmd128.png`,
       },
     },
   ],
