@@ -101,7 +101,15 @@ const HeroSection = () => {
             </List>
 
             <Group mt={30}>
-              <Button radius="xl" size="md" className={classes.control}>
+              <Button
+                radius="xl"
+                size="md"
+                className={classes.control}
+                component="a"
+                href="https://chrome.google.com/webstore/detail/the-muslims-dashboard/glaaahieanjcamcabaggfcaclfjdghfe"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Install now
               </Button>
               <Button
