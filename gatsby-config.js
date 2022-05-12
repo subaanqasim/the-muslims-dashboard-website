@@ -6,7 +6,13 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `The Muslim's Dashboard`,
+    siteUrl: `https://www.themuslimsdashboard.com`,
+    description: `A new-tab Chrome extension that provides everything a Muslim needs at a glance – accurate prayer times, updated weather forecast, Qur'an and Hadith reminders, plus more in the works.`,
+  },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-mantine`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,

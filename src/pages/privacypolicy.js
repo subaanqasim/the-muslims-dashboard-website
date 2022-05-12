@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import HelmetSEO from "../components/HelmetSEO"
 
 const markdown = `
 # PRIVACY NOTICE
@@ -157,6 +158,10 @@ Based on the applicable laws of your country, you have the right to request acce
 const privacypolicy = () => {
   return (
     <Layout>
+      <HelmetSEO
+        title="Privacy Policy"
+        description="The privacy notice for The Muslim's Dashboard Chrome extension."
+      />
       <Container>
         <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
       </Container>

@@ -8,6 +8,8 @@ import {
   Group,
 } from "@mantine/core"
 import { Link } from "gatsby"
+import HelmetSEO from "../components/HelmetSEO"
+import Layout from "../components/Layout"
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -54,24 +56,30 @@ export default function NotFound() {
   const { classes } = useStyles()
 
   return (
-    <Container className={classes.root}>
-      <div className={classes.label}>404</div>
-      <Title className={classes.title}>You have found a secret place.</Title>
-      <Text
-        color="dimmed"
-        size="lg"
-        align="center"
-        className={classes.description}
-      >
-        Unfortunately, this is only a 404 page. You may have mistyped the
-        address, or the page has been moved to another URL. If you think this is
-        an error please get in touch.
-      </Text>
-      <Group position="center">
-        <Link to="/">
-          <Button size="md">Take me back to the Home page.</Button>
-        </Link>
-      </Group>
-    </Container>
+    <Layout>
+      <HelmetSEO
+        title="Page not found"
+        description="Oops! This page doesn't seem to exist. Get in touch if you think this is a bug."
+      />
+      <Container className={classes.root}>
+        <div className={classes.label}>404</div>
+        <Title className={classes.title}>You have found a secret place.</Title>
+        <Text
+          color="dimmed"
+          size="lg"
+          align="center"
+          className={classes.description}
+        >
+          Unfortunately, this is only a 404 page. You may have mistyped the
+          address, or the page has been moved to another URL. If you think this
+          is an error please get in touch.
+        </Text>
+        <Group position="center">
+          <Link to="/">
+            <Button size="md">Take me back to the Home page.</Button>
+          </Link>
+        </Group>
+      </Container>
+    </Layout>
   )
 }
