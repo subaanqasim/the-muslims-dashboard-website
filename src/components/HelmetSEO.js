@@ -1,6 +1,6 @@
 import React from "react"
-import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 const metadata = graphql`
   {
@@ -13,15 +13,14 @@ const metadata = graphql`
   }
 `
 
-export default function HelmetSEO({ title, description }) {
+export default function HelmetSEO({ title, description, openGraph }) {
   const { site } = useStaticQuery(metadata)
-  const metaDescription = description || site.siteMetadata.description
 
   return (
-    <Helmet
-      htmlAttributes={{ lang: "en" }}
-      title={`${title} | ${site.siteMetadata.title}`}
-      description={[{ name: `description`, content: metaDescription }]}
-    ></Helmet>
+    <GatsbySeo
+      title={title || site.siteMetadata.title}
+      description={description || site.siteMetadata.description}
+      openGraph={openGraph}
+    />
   )
 }

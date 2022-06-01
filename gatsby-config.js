@@ -12,7 +12,6 @@ module.exports = {
     description: `A new-tab Chrome extension that provides everything a Muslim needs at a glance – accurate prayer times, updated weather forecast, Qur'an and Hadith reminders, plus more in the works.`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-mantine`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -34,6 +33,22 @@ module.exports = {
         theme_color: `#15aabf`,
         display: `standalone`,
         icon: `./src/assets/logos/tmd128.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-next-seo`,
+      options: {
+        language: `en`,
+        titleTemplate: `%s | The Muslim's Dashboard`,
+        openGraph: {
+          type: `website`,
+          locale: `en_GB`,
+          url: `https://www.themuslimsdashboard.com`,
+          site_name: `The Muslim's Dashboard`,
+        },
+        twitter: {
+          cardType: `summary_large_image`,
+        },
       },
     },
   ],
